@@ -1,4 +1,6 @@
-<h2>1. Upload Zip lalu klik upload</h2>
+<h2> UTS Sistem Tersebar Rizaluardi 1184102</h2>
+<p>
+<h4>Upload Zip lalu klik upload</h4>
 <form method='post' action='' enctype='multipart/form-data'>
  <input type='file' name='zip' value='pilih file'><br/>
  <input type='submit' name='upload' value='upload' />
@@ -19,17 +21,12 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
+        echo 'Telah tersimpan, upload file kembali <a href="https://utsrizaluardisisbar.herokuapp.com">';
         $zip->close();
     } 
 }
 ?>
 
-<hr>
-<h2>2. Upload ke Sqlite datanya</h2>
-<form method='post' action='aksi.php' id='forms' >
- <input type='hidden' name='name' value='<?php echo basename($stat['name']);?>'>
- <input type='submit' name='aksi' value='SAVE TO SQLite' />
-</form>
 <?php
 
 ?>
