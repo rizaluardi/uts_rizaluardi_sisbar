@@ -1,3 +1,9 @@
+<h2>1. Upload Zip lalu klik upload</h2>
+<form method='post' action='' enctype='multipart/form-data'>
+ <input type='file' name='zip' value='pilih file'><br/>
+ <input type='submit' name='upload' value='upload' />
+</form>
+
 <?php
 
 if ($_FILES) {
@@ -17,11 +23,6 @@ if ($_FILES) {
     } 
 }
 ?>
-<h2>1. Upload Zip lalu klik upload</h2>
-<form method='post' action='' enctype='multipart/form-data'>
- <input type='file' name='zip' value='pilih file'><br/>
- <input type='submit' name='upload' value='upload' />
-</form>
 
 <hr>
 <h2>2. Upload ke Sqlite datanya</h2>
