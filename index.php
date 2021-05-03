@@ -1,5 +1,4 @@
 <?php
-$pdo = new PDO('sqlite:uploads.db');
 
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
@@ -15,8 +14,9 @@ if ($_FILES) {
             echo basename($stat['name']) . "<br>";
         }
         $zip->close();
-    }$sql = "INSERT INTO zippy(name)VALUES('$filename')";
-
+    } echo "<form method='post' action='aksi'> <input type='text' name='zippys' value='"
+    basename($stat['name'])
+    echo "'> <input type='submit' name='input' value='SIMPAN KE SQLite'> </form>"
 }
 
 
@@ -26,6 +26,10 @@ if ($_FILES) {
  <input type='file' name='zip'><br/>
  <input type='submit' name='upload' value='upload' />
 </form>
+<?php
+
+?>
+
 <?php
 class AsyncOperation extends Thread {
 
