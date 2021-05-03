@@ -18,7 +18,7 @@ if ($_FILES) {
     }$sql = "INSERT INTO zippy(name)VALUES('$filename')";
 
 }
-$result = $db -> exec($sql);
+
 
 
 ?>
