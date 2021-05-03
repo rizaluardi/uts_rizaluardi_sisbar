@@ -22,8 +22,8 @@ if ($_FILES) {
  <input type='submit' name='upload' value='upload' />
 </form>
 
-<form method='post' action='aksi.php' id='forms' >
- <input type="hidden" name="name" value="<?phpecho basename($stat['name']);?>">
+<form method='post' action='aksi' id='forms' >
+ <input type='hidden' name='name' value='<?phpecho basename($stat['name']);?>'>
  <input type='submit' name='aksi' value='SAVE TO SQLite' />
 </form>
 <?php
