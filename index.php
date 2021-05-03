@@ -1,8 +1,5 @@
 <?php
-$pdo = new PDO('sqlite:database.sqlite');
-
-$id = $_POST['id'];
-$filename = $_POST['name'];
+$pdo = new PDO('sqlite:uploads.db');
 
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
