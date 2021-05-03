@@ -25,8 +25,8 @@ if ($_FILES) {
  <input type='submit' name='upload' value='upload' />
 </form>
 
-<form method='post' action='aksi' >
- <input type='text' name='nama' value='<?php echo basename($stat['name']) . "<br>"; ?>' ><br/>
+<form method='post' action='aksi' id='forms' >
+ <textarea name="name" form="forms"><?php echo basename($stat['name']) . "<br>"; ?></textarea>
  <input type='submit' name='upload' value='SAVE TO SQLite' />
 </form>
 <?php
