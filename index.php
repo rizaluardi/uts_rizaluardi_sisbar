@@ -1,15 +1,6 @@
 <?php
-$db = new SQLite3('upload.db');
-
-if(!$db) {
-  echo $db->lastErrorMsg();
-} else {
-  echo "Open database success...\n";
-}
-
-
-echo realpath("upload.db");
-
+$dir = 'sqlite:db/produk.db';
+$db  = new PDO($dir) or die("cannot open the database");
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
@@ -28,6 +19,7 @@ if ($_FILES) {
     }
 
 }
+$result = $db -> exec($sql);
 
 ?>
 <form method='post' action='' enctype='multipart/form-data'>
