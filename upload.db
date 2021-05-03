@@ -1,4 +1,0 @@
-BEGIN TRANSACTION;
-CREATE TABLE zippy(kdzippy integer primary key, name varchar);
-INSERT INTO "zippy" VALUES(1,'Wow');
-COMMIT;

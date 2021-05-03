@@ -1,4 +1,10 @@
 <?php
+$dir = 'sqlite:uploads.db';
+$db = new PDO($dir) or die("cannot open the database");
+
+$id = $_POST['id'];
+$filename = $_POST['name'];
+
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
@@ -12,11 +18,12 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
-        $sql = "INSERT INTO zippy(name)VALUES('$filename')";
         $zip->close();
-    }
+    }$sql = "INSERT INTO zippy(name)VALUES('$filename')";
 
 }
+$result = $db -> exec($sql);
+
 
 ?>
 <form method='post' action='' enctype='multipart/form-data'>
