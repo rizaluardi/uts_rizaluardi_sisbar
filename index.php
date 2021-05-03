@@ -1,6 +1,5 @@
 <?php
-$dir = 'sqlite:uploads.db';
-$db = new PDO($dir) or die("cannot open the database");
+$pdo = new PDO('sqlite:database.sqlite');
 
 $id = $_POST['id'];
 $filename = $_POST['name'];
