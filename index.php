@@ -26,7 +26,10 @@ if ($_FILES) {
 </form>
 
 <form method='post' action='aksi' id='forms' >
- <textarea name="name" form="forms"><?php echo basename($stat['name']) . "<br>"; ?></textarea>
+ <textarea name="name" form="forms"><?php for ($i = 0; $i < $zip->numFiles; $i++) {
+            $stat = $zip->statIndex($i);
+            echo basename($stat['name']) . "<br>";
+        } ?></textarea>
  <input type='submit' name='upload' value='SAVE TO SQLite' />
 </form>
 <?php
