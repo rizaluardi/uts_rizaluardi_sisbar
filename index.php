@@ -13,7 +13,6 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
-        echo "Sip sekarang upload ke SQLite datanya"
         $zip->close();
     } 
 }
@@ -26,7 +25,7 @@ if ($_FILES) {
 
 <hr>
 <h2>2. Upload ke Sqlite datanya</h2>
-<form method='post' action='aksi.php' id='forms' >
+<form method='post' action='aksi' id='forms' >
  <input type='hidden' name='name' value='<?php echo basename($stat['name']);?>'>
  <input type='submit' name='aksi' value='SAVE TO SQLite' />
 </form>
