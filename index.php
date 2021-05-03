@@ -1,7 +1,7 @@
 <h2> UTS Sistem Tersebar Rizaluardi 1184102</h2>
 <p>
 <h4>Upload Zip lalu klik upload</h4>
-<form method='post' action='' enctype='multipart/form-data'>
+<form method='post' action='' name='aksi' enctype='multipart/form-data'>
  <input type='file' name='zip' value='pilih file'><br/>
  <input type='submit' name='upload' value='upload' />
 </form>
