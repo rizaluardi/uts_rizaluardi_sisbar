@@ -1,6 +1,6 @@
 <?php
 /* include file konfigurasi */
-$pdo = new PDO('sqlite:uploads.db');
+$pdo = new PDO('sqlite:uploads.sqlite');
 
 $name = $_POST['name'];
 $aksi = $_POST['aksi'];
