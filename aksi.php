@@ -10,8 +10,8 @@ $id = $_POST['id'];
 $sql = null;
 /* operasi tambah atau edit? */
 if($aksi) {
-	$sql = "INSERT INTO book(title,price,writer)
-		VALUES('$title','$price','$writer')";
+	$sql = "INSERT INTO zippy(name)
+		VALUES('$name')";
 }
 
 $result = $db -> exec($sql);

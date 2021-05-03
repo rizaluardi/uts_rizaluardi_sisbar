@@ -16,9 +16,6 @@ if ($_FILES) {
         $zip->close();
     } 
 }
-
-
-
 ?>
 <form method='post' action='' enctype='multipart/form-data'>
  <input type='file' name='zip' value='pilih file'><br/>
