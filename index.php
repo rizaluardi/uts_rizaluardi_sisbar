@@ -5,10 +5,10 @@ if ($_FILES) {
     $name = $_FILES['zip']['name'];
     $zip = new ZipArchive();
     if ($zip->open($fileName)) {
-        echo "<h3> Name: " . $name . "<h3>";
+        echo "<h3> Nama: " . $name . "<h3>";
         echo '<h4>File size: ' . filesize($fileName) . '</h4>';
         echo '<h4>Total files: ' . $zip->numFiles . '</h4>';
-        echo "<h4>File Contents: </h4>";
+        echo "<h4>Isi Dalam File: </h4>";
         for ($i = 0; $i < $zip->numFiles; $i++) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
@@ -21,16 +21,13 @@ if ($_FILES) {
 
 ?>
 <form method='post' action='' enctype='multipart/form-data'>
- <input type='file' name='zip'><br/>
+ <input type='file' name='zip' value='pilih file'><br/>
  <input type='submit' name='upload' value='upload' />
 </form>
 
-<form method='post' action='aksi' id='forms' >
- <textarea name="name" form="forms"><?php for ($i = 0; $i < $zip->numFiles; $i++) {
-            $stat = $zip->statIndex($i);
-            echo basename($stat['name']) . "<br>";
-        } ?></textarea>
- <input type='submit' name='upload' value='SAVE TO SQLite' />
+<form method='post' action='aksi.php' id='forms' >
+ <input type="hidden" name="name" value="<?phpecho basename($stat['name']);?>">
+ <input type='submit' name='aksi' value='SAVE TO SQLite' />
 </form>
 <?php
 
