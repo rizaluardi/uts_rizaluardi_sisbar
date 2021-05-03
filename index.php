@@ -1,4 +1,6 @@
 <?php
+$dir = 'sqlite:db/upload.db';
+$db  = new PDO($dir) or die("cannot open the database");
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
@@ -12,6 +14,7 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
+        $sql = "INSERT INTO book(name)VALUES('$name')";
         $zip->close();
     }
 
@@ -43,7 +46,7 @@ class AsyncOperation extends Thread {
 $stack = array();
 
 //Initiate Multiple Thread
-foreach ( range("A", "D") as $i ) {
+foreach ( range($fileName) as $i ) {
     $stack[] = new AsyncOperation($i);
 }
 
