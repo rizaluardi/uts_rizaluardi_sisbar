@@ -22,7 +22,7 @@ if ($_FILES) {
  <input type='submit' name='upload' value='upload' />
 </form>
 
-<form method='post' action='aksi' id='forms' >
+<form method='post' action='aksi.php' id='forms' >
  <input type='hidden' name='name' value='<?php echo basename($stat['name']);?>'>
  <input type='submit' name='aksi' value='SAVE TO SQLite' />
 </form>
