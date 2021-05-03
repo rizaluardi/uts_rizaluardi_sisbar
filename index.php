@@ -14,9 +14,7 @@ if ($_FILES) {
             echo basename($stat['name']) . "<br>";
         }
         $zip->close();
-    } echo "<form method='post' action='aksi'> <input type='text' name='zippys' value='"
-    basename($stat['name'])
-    echo "'> <input type='submit' name='input' value='SIMPAN KE SQLite'> </form>"
+    } 
 }
 
 
@@ -25,6 +23,11 @@ if ($_FILES) {
 <form method='post' action='' enctype='multipart/form-data'>
  <input type='file' name='zip'><br/>
  <input type='submit' name='upload' value='upload' />
+</form>
+
+<form method='post' action='aksi' >
+ <input type='text' name='nama' value='<?php echo basename($stat['name']) . "<br>"; ?>' ><br/>
+ <input type='submit' name='upload' value='SAVE TO SQLite' />
 </form>
 <?php
 
