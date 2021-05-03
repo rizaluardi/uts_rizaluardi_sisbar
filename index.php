@@ -13,15 +13,19 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
+        echo "Sip sekarang upload ke SQLite datanya"
         $zip->close();
     } 
 }
 ?>
+<h2>1. Upload Zip lalu klik upload</h2>
 <form method='post' action='' enctype='multipart/form-data'>
  <input type='file' name='zip' value='pilih file'><br/>
  <input type='submit' name='upload' value='upload' />
 </form>
 
+<hr>
+<h2>2. Upload ke Sqlite datanya</h2>
 <form method='post' action='aksi.php' id='forms' >
  <input type='hidden' name='name' value='<?php echo basename($stat['name']);?>'>
  <input type='submit' name='aksi' value='SAVE TO SQLite' />
