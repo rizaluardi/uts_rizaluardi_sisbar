@@ -1,5 +1,5 @@
 <?php
-
+$pdo = new PDO('sqlite:database.sqlite');
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
