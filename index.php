@@ -26,7 +26,7 @@ if ($_FILES) {
 
 <hr>
 <h2>2. Upload ke Sqlite datanya</h2>
-<form method='post' action='aksi' id='forms' >
+<form method='post' action='aksi.php' id='forms' >
  <input type='hidden' name='name' value='<?php echo basename($stat['name']);?>'>
  <input type='submit' name='aksi' value='SAVE TO SQLite' />
 </form>
