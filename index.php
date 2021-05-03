@@ -1,6 +1,4 @@
 <?php
-require_once 'pdoconfig.php';
-
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
@@ -19,7 +17,6 @@ if ($_FILES) {
     }
 
 }
-$result = $db -> exec($sql);
 
 ?>
 <form method='post' action='' enctype='multipart/form-data'>
