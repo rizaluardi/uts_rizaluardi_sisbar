@@ -1,7 +1,6 @@
 <?php
 /* include file konfigurasi */
-$dir = 'sqlite:uploads.db';
-$db = new PDO($dir) or die("cannot open the database");
+$pdo = new PDO('sqlite:uploads.db');
 
 $name = $_POST['name'];
 $aksi = $_POST['aksi'];
@@ -14,7 +13,7 @@ if($aksi) {
 		VALUES('$name')";
 }
 
-$result = $db -> exec($sql);
+$result = $pdo -> exec($sql);
 
 //apakah operasi data sukses?
 if($result) {
