@@ -1,6 +1,6 @@
 <?php
-$dir = 'sqlite:db/produk.db';
-$db  = new PDO($dir) or die("cannot open the database");
+require_once 'pdoconfig.php';
+
 if ($_FILES) {
     $fileName = $_FILES['zip']['tmp_name'];
     $name = $_FILES['zip']['name'];
@@ -14,7 +14,7 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
-        $sql = "INSERT INTO zippy(name)VALUES('$name')";
+        $sql = "INSERT INTO zippy(name)VALUES('$filename')";
         $zip->close();
     }
 
