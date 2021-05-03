@@ -21,14 +21,10 @@ if ($_FILES) {
             $stat = $zip->statIndex($i);
             echo basename($stat['name']) . "<br>";
         }
-        echo 'Telah tersimpan, upload file kembali <a href="https://utsrizaluardisisbar.herokuapp.com">';
+        echo '\n Telah tersimpan, upload file kembali <a href="https://utsrizaluardisisbar.herokuapp.com"> Reload</a>';
         $zip->close();
     } 
 }
-?>
-
-<?php
-
 ?>
 
 <?php
